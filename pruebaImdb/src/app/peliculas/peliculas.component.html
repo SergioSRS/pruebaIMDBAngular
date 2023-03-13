@@ -1,0 +1,25 @@
+<h1>Buscador de películas</h1>
+
+<input type="text" name="buscador" id="buscador" placeholder="Buscar peliculas...">
+<button type="button" (click)="listado()">Buscar</button>
+
+
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let peli of peliculas.results">
+        <td><img src={{peli.image}} alt="" width="128px"></td>
+        <td><a (click)="guardarID(peli.id)" routerLink="/reparto">{{peli.title}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
